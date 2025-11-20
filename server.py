@@ -86,12 +86,12 @@ class RequestHandler(http.server.BaseHTTPRequestHandler):
         cases.sort(key=lambda x: x.get('name', '').lower())
 
         # Generate HTML
-        html_content = "<html><body><h1>User List</h1><ul>"
+        html_content = "<html><body><h1>User List</h1><ol>"
         for case in cases:
             name = case.get('name', 'Unknown')
             email = case.get('email', 'Unknown')
             html_content += f"<li><b>{name}</b>: {email}</li>"
-        html_content += "</ul></body></html>"
+        html_content += "</ol></body></html>"
 
         self.send_response(200)
         self.send_header('Content-type', 'text/html')
