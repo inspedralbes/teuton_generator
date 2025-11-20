@@ -1,0 +1,7 @@
+global:
+  :host1_username: isard
+  :host1_password: pirineus
+cases:
+# Zuriñe
+- tt_members: zurine@example.com
+  :host1_ip: 127.0.0.1
