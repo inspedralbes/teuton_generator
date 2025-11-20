@@ -4,6 +4,7 @@ import urllib.parse
 import os
 import sys
 import threading
+import socket
 
 # --- Configuration Constants ---
 PORT = 80
@@ -208,6 +209,12 @@ def run(server_class=http.server.HTTPServer, handler_class=RequestHandler):
         
         print(f"Starting server on port {PORT}...")
         print(f"{YAML_FILE} includes {user_count} users")
+        
+        # Display server listening information
+        print(f"Server listening on ALL interfaces (0.0.0.0:{PORT})")
+        print(f"Access the server using:")
+        print(f"  http://<YOUR_IP>:{PORT}/")
+        print(f"  (Run 'ip a' on Linux or 'ipconfig' on Windows to find your IP addresses)")
         
         server_address = ('', PORT)
         httpd = server_class(server_address, handler_class)
